@@ -176,17 +176,14 @@ public class Operations {
     }
 
     private static String leftShit(String binary, int shifts){
-        StringBuilder result = new StringBuilder();
-        for (int i = 0; i < shifts; i++){
-            result.append('0');
-        }
-        return result.toString();
+        return binary.substring(shifts) + "0".repeat(shifts);
     }
 
     private static String rightShift(String binary, int shifts) {
         if (shifts >= binary.length()){
             return "0".repeat(binary.length());
         }
-        return "0".repeat(shifts) + binary.substring(0, binary.length() - shifts);
+        String shifted = binary.substring(0, binary.length() - shifts);
+        return "0".repeat(shifts) + shifted;
     }
 }
