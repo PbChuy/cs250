@@ -1,6 +1,7 @@
 package cs250.hw1;
 
 
+
 public class Operations {
     public static void main(String[] args){
         if(args.length != 3) {
@@ -37,7 +38,7 @@ public class Operations {
 
             System.out.println("Task 3 ");
             for(int i = 0; i < args.length; i++){
-                System.out.print(args[i] + "=" + "\n");
+                System.out.print(args[i] + "=true" + "\n");
             }
             System.out.println();
             
@@ -62,12 +63,7 @@ public class Operations {
             System.out.print(binaryArgs[0] + "^" + binaryArgs[1] + "^" + binaryArgs[2] + "=" + bitwiseXOR(binaryArgs[0], binaryArgs[1], binaryArgs[2]) + "\n");
             System.out.println();
             
-            System.out.println("Task 8 ");
-            for(int i = 0; i < args.length; i++){
-                System.out.print(binaryArgs[i] + "<<2=" + leftShit(binaryArgs[i], 2) + "," + binaryArgs[i] + ">>2=" + rightShift(binaryArgs[i], 2) + "\n");
-            }
-            System.out.println();
-            System.out.println();
+
         }
 
     private static long parseBinary(String binary){
@@ -174,16 +170,6 @@ public class Operations {
         }
         return result.toString();
     }
-
-    private static String leftShit(String binary, int shifts){
-        return binary.substring(shifts) + "0".repeat(shifts);
-    }
-
-    private static String rightShift(String binary, int shifts) {
-        if (shifts >= binary.length()){
-            return "0".repeat(binary.length());
-        }
-        String shifted = binary.substring(0, binary.length() - shifts);
-        return "0".repeat(shifts) + shifted;
-    }
 }
+
+
